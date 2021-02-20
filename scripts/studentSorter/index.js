@@ -1,4 +1,4 @@
-import { studentData } from "./data.js";
+import { studentData } from './data.js';
 
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -22,7 +22,7 @@ const createTeams = (students, teamSize) => {
 };
 
 const studentSorter = (studentData, teamSize) => {
-  const days = ["Wednesday", "Thursday"];
+  const days = ['Wednesday', 'Thursday'];
   let sortedStudents = {
     [days[0]]: [],
     [days[1]]: [],
@@ -57,7 +57,11 @@ const studentSorter = (studentData, teamSize) => {
     sortedStudents[days[1]].length + firstChoices[days[1]].length;
 
   let [highest, lowest] =
-    wantDay1 > wantDay2 ? [days[0], days[1]] : wantDay1 < wantDay2 ? [days[1], days[0]] : [null, null];
+    wantDay1 > wantDay2
+      ? [days[0], days[1]]
+      : wantDay1 < wantDay2
+      ? [days[1], days[0]]
+      : [null, null];
 
   if (highest !== null && lowest !== null) {
     sortedStudents[lowest] = sortedStudents[lowest].concat(
@@ -91,5 +95,7 @@ const studentSorter = (studentData, teamSize) => {
   };
 };
 export const runStudentSorter = () => {
-  console.log(studentSorter(studentData, 5));
+  const students = studentSorter(studentData, 4);
+  console.log(students);
+  console.log(JSON.stringify(students));
 };

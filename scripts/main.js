@@ -1,5 +1,7 @@
-import { runStudentSorter } from "./studentSorter/index.js";
+// import { runStudentSorter } from "./studentSorter/index.js";
+// runStudentSorter();
 
-runStudentSorter();
+import runIssueCreator from './issueCreator/index.js';
+runIssueCreator();
 
-console.log("is running");
+console.log('Whole App is running');
