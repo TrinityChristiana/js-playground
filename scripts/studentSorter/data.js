@@ -1,41 +1,6 @@
 export const studentData = [
   {
-    name: 'Honey-Rae Swan',
-    Wednesday: 1,
-    Thursday: 0,
-  },
-  {
-    name: 'Hunter Juneau',
-    Wednesday: 2,
-    Thursday: 1,
-  },
-  {
-    name: 'Casey Walker',
-    Wednesday: 1,
-    Thursday: 0,
-  },
-  {
-    name: 'Holly McKee Parsons',
-    Wednesday: 1,
-    Thursday: 0,
-  },
-  {
-    name: 'Dani Crosby',
-    Wednesday: 1,
-    Thursday: 2,
-  },
-  {
     name: 'Katherine Fry',
-    Wednesday: 1,
-    Thursday: 2,
-  },
-  {
-    name: 'Juan Davila',
-    Wednesday: 2,
-    Thursday: 1,
-  },
-  {
-    name: 'Robert Cole',
     Wednesday: 1,
     Thursday: 0,
   },
@@ -45,24 +10,44 @@ export const studentData = [
     Thursday: 2,
   },
   {
-    name: 'Ellie Walker',
-    Wednesday: 1,
-    Thursday: 2,
-  },
-  {
     name: 'Lindsey Satterfield',
     Wednesday: 1,
     Thursday: 0,
   },
   {
-    name: 'Mitchell J Crumbley',
+    name: 'Holly McKee Parsons',
+    Wednesday: 1,
+    Thursday: 0,
+  },
+  {
+    name: 'Ellie Walker',
+    Wednesday: 1,
+    Thursday: 0,
+  },
+  {
+    name: 'Hunter Juneau',
     Wednesday: 1,
     Thursday: 2,
   },
   {
-    name: 'Chie Stroud',
-    Wednesday: 2,
-    Thursday: 1,
+    name: 'Ben Jarrett',
+    Wednesday: 1,
+    Thursday: 2,
+  },
+  {
+    name: 'Robert Cole',
+    Wednesday: 1,
+    Thursday: 0,
+  },
+  {
+    name: 'Casey Walker',
+    Wednesday: 1,
+    Thursday: 0,
+  },
+  {
+    name: 'Honey-Rae Swan',
+    Wednesday: 1,
+    Thursday: 2,
   },
   {
     name: 'Tad Sekeres',
@@ -70,9 +55,14 @@ export const studentData = [
     Thursday: 2,
   },
   {
-    name: 'Nathan Martin',
+    name: 'John Maple',
     Wednesday: 2,
     Thursday: 1,
+  },
+  {
+    name: 'Chie Stroud',
+    Wednesday: 1,
+    Thursday: 2,
   },
   {
     name: 'Sara',
@@ -80,12 +70,32 @@ export const studentData = [
     Thursday: 0,
   },
   {
+    name: 'Dani Crosby',
+    Wednesday: 1,
+    Thursday: 0,
+  },
+  {
+    name: 'Gabby Tobermann',
+    Wednesday: 2,
+    Thursday: 1,
+  },
+  {
+    name: 'Jesse Robinson',
+    Wednesday: 1,
+    Thursday: 2,
+  },
+  {
+    name: 'Chris Meffley',
+    Wednesday: 2,
+    Thursday: 1,
+  },
+  {
     name: 'Martin Sisk',
     Wednesday: 2,
     Thursday: 1,
   },
   {
-    name: 'John Maple',
+    name: 'Juan Davila',
     Wednesday: 2,
     Thursday: 1,
   },
@@ -94,30 +104,16 @@ export const studentData = [
     Wednesday: 1,
     Thursday: 0,
   },
+  // These have not been submited
   {
-    name: 'Jesse Robinson',
+    name: 'Mitchell J Crumbley',
     Wednesday: 1,
     Thursday: 2,
-  },
-  {
-    name: 'Ben Jarrett',
-    Wednesday: 0,
-    Thursday: 1,
   },
   {
     name: 'Matthew Gonzales',
     Wednesday: 1,
     Thursday: 0,
-  },
-  {
-    name: 'Chris Meffley',
-    Wednesday: 1,
-    Thursday: 2,
-  },
-  {
-    name: 'Gabby Tobermann',
-    Wednesday: 2,
-    Thursday: 1,
   },
   {
     name: 'Sean Rossettie',
@@ -126,92 +122,67 @@ export const studentData = [
   },
 ];
 
-const realData1 = {
-  Wednesday: [
-    ['*Matthew Gonzales', '*Robert Cole', 'Tad Sekeres', '*Honey-Rae Swan'],
-    ['*nathan keith', 'Katherine Fry', '*Casey Walker', '*Holly McKee Parsons'],
-    ['*Sara', 'Chris Meffley', 'Mitchell J Crumbley', '*Lindsey Satterfield'],
-  ],
-  Thursday: [
-    ['Ellie Walker', 'Chie Stroud', 'Gabby Tobermann', 'Dani Crosby'],
-    ['Jim Conner', 'Juan Davila', 'Hunter Juneau', 'Sean Rossettie'],
-    ['Jesse Robinson', 'Nathan Martin', 'John Maple', 'Martin Sisk'],
-    ['*Ben Jarrett'],
-  ],
-};
+console.log(studentData.length);
 
-const realData2 = {
-  Wednesday: [
-    ['Jim Conner', '*Matthew Gonzales', 'Mitchell J Crumbley', '*Sara'],
-    ['*nathan keith', 'Chris Meffley', '*Robert Cole', '*Casey Walker'],
-    [
-      '*Honey-Rae Swan',
-      '*Lindsey Satterfield',
-      '*Holly McKee Parsons',
-      'Dani Crosby',
+export const realData = [
+  {
+    Wednesday: [
+      ['*Ellie Walker', '*Casey Walker', 'Jim Conner', '*Lindsey Satterfield'],
+      ['Ben Jarrett', '*Katherine Fry', '*Matthew Gonzales', '*Dani Crosby'],
+      ['*Robert Cole', '*Sara', '*nathan keith', '*Holly McKee Parsons'],
     ],
-  ],
-  Thursday: [
-    ['*Ben Jarrett', 'Ellie Walker', 'Katherine Fry', 'Chie Stroud'],
-    ['Hunter Juneau', 'Juan Davila', 'Nathan Martin', 'Jesse Robinson'],
-    ['Gabby Tobermann', 'Sean Rossettie', 'John Maple', 'Tad Sekeres'],
-    ['Martin Sisk'],
-  ],
-};
-
-const realData3 = {
-  Wednesday: [
-    ['*Holly McKee Parsons', '*Casey Walker', 'Ellie Walker', '*nathan keith'],
-    ['*Matthew Gonzales', '*Robert Cole', '*Lindsey Satterfield', 'Jim Conner'],
-    ['*Sara', 'Chris Meffley', '*Honey-Rae Swan', 'Mitchell J Crumbley'],
-  ],
-  Thursday: [
-    ['Dani Crosby', 'Gabby Tobermann', '*Ben Jarrett', 'Juan Davila'],
-    ['Chie Stroud', 'Tad Sekeres', 'John Maple', 'Sean Rossettie'],
-    ['Jesse Robinson', 'Nathan Martin', 'Hunter Juneau', 'Martin Sisk'],
-    ['Katherine Fry'],
-  ],
-};
-
-const realData4 = {
-  Wednesday: [
-    [
-      '*Robert Cole',
-      '*Holly McKee Parsons',
-      '*Matthew Gonzales',
-      'Tad Sekeres',
+    Thursday: [
+      ['Martin Sisk', 'Gabby Tobermann', 'Sean Rossettie', 'Tad Sekeres'],
+      ['Honey-Rae Swan', 'Jesse Robinson', 'John Maple', 'Chris Meffley'],
+      ['Mitchell J Crumbley', 'Hunter Juneau', 'Juan Davila', 'Chie Stroud'],
     ],
-    ['*Honey-Rae Swan', '*Casey Walker', 'Ellie Walker', '*Sara'],
-    [
-      '*Lindsey Satterfield',
-      '*nathan keith',
-      'Katherine Fry',
-      'Mitchell J Crumbley',
+  },
+  {
+    Wednesday: [
+      ['*Lindsey Satterfield', 'Jesse Robinson', '*Robert Cole', '*nathan keith'],
+      ['Jim Conner', '*Matthew Gonzales', '*Katherine Fry', '*Dani Crosby'],
+      ['*Ellie Walker', '*Holly McKee Parsons', '*Sara', '*Casey Walker'],
     ],
-  ],
-  Thursday: [
-    ['Chris Meffley', '*Ben Jarrett', 'Juan Davila', 'Nathan Martin'],
-    ['Jesse Robinson', 'Martin Sisk', 'Hunter Juneau', 'Dani Crosby'],
-    ['John Maple', 'Sean Rossettie', 'Jim Conner', 'Chie Stroud'],
-    ['Gabby Tobermann'],
-  ],
-};
-
-const realData5 = {
-  Wednesday: [
-    ['*Sara', 'Tad Sekeres', 'Chris Meffley', 'Mitchell J Crumbley'],
-    ['*Honey-Rae Swan', '*Robert Cole', '*Holly McKee Parsons', 'Ellie Walker'],
-    [
-      '*nathan keith',
-      '*Lindsey Satterfield',
-      '*Casey Walker',
-      '*Matthew Gonzales',
+    Thursday: [
+      ['Sean Rossettie', 'Juan Davila', 'Tad Sekeres', 'Ben Jarrett'],
+      ['Chie Stroud', 'Martin Sisk', 'Honey-Rae Swan', 'Chris Meffley'],
+      ['Gabby Tobermann', 'John Maple', 'Hunter Juneau', 'Mitchell J Crumbley'],
     ],
-  ],
-  Thursday: [
-    ['Hunter Juneau', '*Ben Jarrett', 'Gabby Tobermann', 'Katherine Fry'],
-    ['Jim Conner', 'Chie Stroud', 'Dani Crosby', 'John Maple'],
-    ['Jesse Robinson', 'Martin Sisk', 'Nathan Martin', 'Sean Rossettie'],
-    ['Juan Davila'],
-  ],
-};
+  },
+  {
+    Wednesday: [
+      ['*nathan keith', '*Ellie Walker', '*Katherine Fry', 'Honey-Rae Swan'],
+      ['*Sara', '*Robert Cole', 'Chie Stroud', '*Dani Crosby'],
+      ['*Holly McKee Parsons', '*Matthew Gonzales', '*Lindsey Satterfield', '*Casey Walker'],
+    ],
+    Thursday: [
+      ['Jesse Robinson', 'Chris Meffley', 'Ben Jarrett', 'Juan Davila'],
+      ['Tad Sekeres', 'Sean Rossettie', 'Gabby Tobermann', 'Mitchell J Crumbley'],
+      ['Hunter Juneau', 'Martin Sisk', 'John Maple', 'Jim Conner'],
+    ],
+  },
+  {
+    Wednesday: [
+      ['*Ellie Walker', 'Tad Sekeres', '*Katherine Fry', 'Jim Conner'],
+      ['*Dani Crosby', '*Matthew Gonzales', '*Sara', '*Robert Cole'],
+      ['*Casey Walker', '*nathan keith', '*Holly McKee Parsons', '*Lindsey Satterfield'],
+    ],
+    Thursday: [
+      ['Ben Jarrett', 'Juan Davila', 'Chris Meffley', 'Honey-Rae Swan'],
+      ['Martin Sisk', 'Hunter Juneau', 'John Maple', 'Mitchell J Crumbley'],
+      ['Jesse Robinson', 'Sean Rossettie', 'Chie Stroud', 'Gabby Tobermann'],
+    ],
+  },
+  {
+    Wednesday: [
+      ['Jim Conner', '*Sara', '*nathan keith', 'Ben Jarrett'],
+      ['*Dani Crosby', '*Robert Cole', '*Ellie Walker', '*Matthew Gonzales'],
+      ['*Katherine Fry', '*Casey Walker', '*Holly McKee Parsons', '*Lindsey Satterfield'],
+    ],
+    Thursday: [
+      ['Tad Sekeres', 'Honey-Rae Swan', 'Sean Rossettie', 'John Maple'],
+      ['Jesse Robinson', 'Martin Sisk', 'Juan Davila', 'Hunter Juneau'],
+      ['Mitchell J Crumbley', 'Chris Meffley', 'Gabby Tobermann', 'Chie Stroud'],
+    ],
+  },
+];
