@@ -1,15 +1,32 @@
-// create a branch for user
-// commit user information to the file information on new branch
-// Create a PR with the new changes
-// Get back link to the PR
+// check to see if user already has a entry in the JSON
+// check to see if user already has a PR
+// If entry is there or they have a PR, ask the user if they want to update their information, then repopulate form with the past items, on submit, update their object with the new values they have (update PR or create a new one)
 
-import { getFileContents, getRepoInfo } from './utils/data.js';
+// If they already have a branch and no PR's, then delete the branch and start over
+
+// rename the branch after their Firstname Last NAme and Github User ID
+
+// Add loading to it
+
+// Add error handeling (when the commit fails, when the PR fails, when the branch creation fails, with getting user information fails, getFileCOntents fails, when get repo info fails, when get branch info fails)
+
+// Refactor this code and make it cleaner
+
+import { ACCESS_TOKEN } from '../../hiddenKeys.js';
+import {
+  commitToBranch,
+  createBranch,
+  createPR,
+  getFileContents,
+  getGithubUser,
+  getRepoInfo,
+} from './utils/data.js';
 
 const formHTML = `
 <form id="userForm">
   <div class="mb-3">
     <label for="githubAccessToken" class="form-label">Github Access Token</label>
-    <input class="form-control" id="githubAccessToken" name="githubAccessToken" required value="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"/>
+    <input class="form-control" id="githubAccessToken" name="githubAccessToken" required value="${ACCESS_TOKEN}"/>
   </div>
   <div class="mb-3">
     <label for="firstName" class="form-label">First Name</label>
@@ -30,14 +47,51 @@ Welcome to the site!
 <div id="userFormContainer">
   ${formHTML}
 </div>
+<div id="prUrl">
+</div>
 `;
 
 const fileToUpdate = 'scripts/githubJSONUpdater/users.json';
 
-const handleFileUpdate = async (accessToken, formData) => {
-  const { oid } = await getRepoInfo(accessToken);
+const renderToDOM = (id, content) => {
+  const el = document.getElementById(id);
+  el.innerHTML = content;
+};
 
-  const { id, text } = await getFileContents(accessToken, fileToUpdate);
+const showPRURL = (url) => {
+  renderToDOM('userFormContainer', '');
+  renderToDOM('prUrl', `<a href="${url}" target="_blank">Your PR!!!</a>`);
+};
+const handleFileUpdate = async (accessToken, { firstName, lastName }) => {
+  const { oid, id: repoId } = await getRepoInfo(accessToken);
+
+  const { id: fileId, text } = await getFileContents(accessToken, fileToUpdate);
+
+  const parsedContent = JSON.parse(text);
+  const branchName = `${firstName}-${lastName}-${fileId.slice(-10)}`;
+
+  const branchLastOID = await createBranch(accessToken, repoId, branchName, oid);
+
+  const userInfo = await getGithubUser(accessToken);
+
+  parsedContent.push({ ...userInfo, firstName, lastName });
+
+  if (branchLastOID) {
+    await commitToBranch(
+      accessToken,
+      firstName,
+      lastName,
+      branchLastOID,
+      branchName,
+      fileToUpdate,
+      JSON.stringify(parsedContent)
+    );
+
+    const prURL = await createPR(accessToken, repoId, branchName, { firstName, lastName });
+    showPRURL(prURL);
+  } else {
+    console.log('Error!!!');
+  }
 };
 
 const handleSubmit = (e) => {
@@ -54,11 +108,6 @@ const handleSubmit = (e) => {
 const addFormListener = () => {
   const listener = document.getElementById('userForm').addEventListener('submit', handleSubmit);
   return listener;
-};
-
-const renderToDOM = (id, content) => {
-  const el = document.getElementById(id);
-  el.innerHTML = content;
 };
 
 const run = () => {
