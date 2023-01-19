@@ -1,5 +1,6 @@
 // check to see if user already has a entry in the JSON
-// If entry is there, ask the user if they want to update their information, then repopulate form with the past items, on submit, update their object with the new values they have
+// check to see if user already has a PR
+// If entry is there or they have a PR, ask the user if they want to update their information, then repopulate form with the past items, on submit, update their object with the new values they have (update PR or create a new one)
 
 // If they already have a branch and no PR's, then delete the branch and start over
 
